@@ -1,0 +1,44 @@
+﻿@model Template.Models.User.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 class="middle display-4">Register</h1>
+
+<div>
+    <div class="col">
+        <form asp-action="Register">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <input placeholder="E-mail" class="form-control" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-row form-group">
+                <div class="col">
+                    <input placeholder="First name" class="form-control" asp-for="Firstname" />
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <input placeholder="Middle name" class="form-control" asp-for="MiddleName" />
+                </div>
+                <div class="col">
+                    <input placeholder="Last name" class="form-control" asp-for="Lastname" />
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col">
+                    <input placeholder="Password" class="form-control" asp-for="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <input placeholder="Repeat password" class="form-control" asp-for="PasswordCheck" />
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

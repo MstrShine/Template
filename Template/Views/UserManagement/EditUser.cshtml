@@ -1,0 +1,34 @@
+﻿@model Template.Models.User.UserManagementViewModel
+
+<div>
+    <div class="col">
+        @if (TempData["EditUserSuccess"] != null)
+        {
+            <p class="alert alert-success" id="successMessage">@TempData["EditUserSuccess"]</p>
+        }
+        <form asp-action="Edit" asp-route-id="@Model.Id">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input placeholder="E-mail" class="form-control" asp-for="Email" />
+            </div>
+            <div class="form-row form-group">
+                <div class="col">
+                    <label>Firstname</label>
+                    <input placeholder="First name" class="form-control" asp-for="Firstname" />
+                </div>
+                <div class="col">
+                    <label>Middle name</label>
+                    <input placeholder="Middle name" class="form-control" asp-for="MiddleName" />
+                </div>
+                <div class="col">
+                    <label>Lastname</label>
+                    <input placeholder="Last name" class="form-control" asp-for="Lastname" />
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+</div>

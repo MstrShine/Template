@@ -1,0 +1,20 @@
+﻿@model Template.Models.User.ChangePasswordViewModel
+<div>
+    <div class="col">
+        <form asp-action="ChangePassword">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <input placeholder="Old password" class="form-control" asp-for="OldPassword" />
+            </div>
+            <div class="form-group">
+                <input placeholder="New password" class="form-control" asp-for="NewPassword" />
+            </div>
+            <div class="form-group">
+                <input placeholder="Repeat new password" class="form-control" asp-for="NewRepeatPassword" />
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

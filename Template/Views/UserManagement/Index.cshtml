@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Template.Models.User.UserManagementViewModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fullname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var viewModel in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => viewModel.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => viewModel.Fullname)
+                </td>
+                <td>
+                    <a asp-action="EditUser" asp-route-id="@viewModel.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
